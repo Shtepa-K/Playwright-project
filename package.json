@@ -5,11 +5,20 @@
   "main": "cypress.config.js",
   "dependencies": {},
   "devDependencies": {
+<<<<<<< HEAD
+    "cypress": "^14.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "npx cypress open" 
+
+=======
     "cypress": "^10.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "npx cypress open"
+>>>>>>> first
   },
   "repository": {
     "type": "git",
