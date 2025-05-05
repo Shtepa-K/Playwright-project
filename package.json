@@ -9,10 +9,11 @@
     "cypress": "^12.17.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.36.0",
     "@types/faker": "^6.6.11"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx playwright test",
     "cypress:open": "npx cypress open"
   },
   "repository": {
