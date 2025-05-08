@@ -19,7 +19,7 @@ Cypress.Commands.add('login', (email, password) => {
   
   // Ждём появления полей и вводим данные
   cy.get('#signinEmail', { timeout: 10000 }).should('be.visible').type(email);
-  cy.get('#signinPassword').type(password, { sensitive: true });
+  cy.get('#signinPassword').type(password, { sensitive: false });
   cy.get('.modal-footer > .btn-primary').contains('Login').click();
 });
 //
