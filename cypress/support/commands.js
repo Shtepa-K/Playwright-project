@@ -22,6 +22,24 @@ Cypress.Commands.add('login', (email, password) => {
   cy.get('#signinPassword').type(password, { sensitive: false });
   cy.get('.modal-footer > .btn-primary').contains('Login').click();
 });
+
+
+Cypress.Commands.add('addExpense', (expenseData) => {
+ cy.request({
+  method: 'POST',
+   url: '/api/expenses',
+  body: expenseData
+}).then((response) => {
+  expect(response.status).to.eq(200);
+    expect(response.body.data.carId).to.eq(expenseData.carId);
+  expect(response.body.data.mileage).to.eq(expenseData.mileage);
+      expect(response.body.data.liters).to.eq(expenseData.liters);
+  expect(response.body.data.totalCost).to.eq(expenseData.totalCost);
+  expect(response.body.data.reportedAt).to.eq(expenseData.reportedAt);
+});
+});
+
+
 //
 //
 // -- This is a child command --
