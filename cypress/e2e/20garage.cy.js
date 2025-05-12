@@ -3,7 +3,7 @@ require('../support/commands');
 
 describe('Example of registrtion and log in', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('https://guest:welcome2qauto@qauto.forstudy.space')
      
   })
      it('successful registration', () => {
