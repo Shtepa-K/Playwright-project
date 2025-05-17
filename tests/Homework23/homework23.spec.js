@@ -89,6 +89,7 @@ test('#5 negativ test', async ({ page }) => {
   await page.goto('https://guest:welcome2qauto@qauto.forstudy.space');
   await page.click('.hero-descriptor_btn');
   
+  
   await expect(page.locator('button:has-text("Register")')).toBeDisabled();
   await page.fill('#signupLastName', '123');
   await page.fill('#signupEmail', '123');
