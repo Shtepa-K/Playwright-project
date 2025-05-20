@@ -69,10 +69,7 @@ test('#3 negativ test', async ({ page }) => {
   await expect(nameError).toHaveText('Email required');
   await page.fill('#signupEmail', '123');
   await expect(nameError).toHaveText('Email is incorrect');
-  // let borderColor = await page.locator('#signupEmail').evaluate(el =>
-  //  window.getComputedStyle(el).getPropertyValue('border-color')
- // );
- // expect(borderColor).toBe('rgb(208, 66, 87)');
+ 
 });
  test('#4 negativ test', async ({ page }) => {
   await page.goto('https://guest:welcome2qauto@qauto.forstudy.space');

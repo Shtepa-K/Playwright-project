@@ -1,12 +1,14 @@
 {
-
   "name": "playwright_project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  },
   "devDependencies": {
-    "@playwright/test": "^1.36.0"
+    "@playwright/test": "^1.36.0",
+    "typescript": "^5.8.3"
   },
   "scripts": {
     "test": "npx playwright test"
