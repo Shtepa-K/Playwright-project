@@ -6,7 +6,7 @@ import { setLocalStorageValue, getLocalStorageValue } from "../../Helpers/localS
 
 test('login by Storage', async ({ userGaragePage }) => {
        const page = userGaragePage.page;
-       await expect(page).toHaveURL("https://qauto.forstudy.space/panel/garage");
+       await expect(page).toHaveURL(/https:\/\/qauto\.forstudy\.space\/panel\/garage/);
        const title = await expect(page).toHaveTitle('Hillel Qauto')
        console.log('Title:', title);
 });
