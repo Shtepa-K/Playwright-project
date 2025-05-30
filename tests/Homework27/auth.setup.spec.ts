@@ -18,7 +18,7 @@ test('authenticate UI', async ({ page }) => {
   await page.waitForURL('https://guest:welcome2qauto@qauto.forstudy.space/panel/garage');
 
   // Проверка, что попали в гараж
-  await expect(page.locator('h1:has-text("Garage")')).toBeVisible(); // или любой другой элемент на гараже
+  await expect(page.locator('h1:has-text("Garage")')).toBeVisible(); 
 
   // Сохранение storageState
   await page.context().storageState({ path: authFile });

@@ -1,2 +1,3 @@
-node_modules/chromium-1071/
-chromium-1071/
+node_modules/
+/chromium-1071/
+playwright/.local-browsers/

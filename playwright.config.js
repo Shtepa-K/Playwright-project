@@ -7,6 +7,6 @@ module.exports = defineConfig({
   use: {
     headless: false,
     browserName: 'chromium',
-    storageState: 'storage/user.json', // ⬅️ добавлено для авторизации через сохранённый state
+   storageState: 'storage/user.json', // ⬅️ добавлено для авторизации через сохранённый state
   },
 });
