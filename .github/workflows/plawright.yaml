@@ -1,4 +1,4 @@
-name: Playwright Tests in Docker
+name: Playwright Tests
 
 on:
   push:
@@ -7,18 +7,24 @@ on:
   pull_request:
     branches:
       - second
+
 jobs:
-  playwright-run:
+  playwright:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run Playwright test in Docker
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
         run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/e2e \
-            -w /e2e \
-            mcr.microsoft.com/playwright:v1.39.0-jammy \
-            bash -c "npx playwright install --with-deps && npx playwright test tests/Homework22/homework22.spec.js"
+          npm ci
+          npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test tests/Homework22/homework22.spec.js
