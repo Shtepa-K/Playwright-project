@@ -1,0 +1,24 @@
+name: Playwright Tests in Docker
+
+on:
+  push:
+    branches:
+      - second
+  pull_request:
+    branches:
+      - second
+jobs:
+  playwright-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Playwright test in Docker
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/e2e \
+            -w /e2e \
+            mcr.microsoft.com/playwright:v1.39.0-jammy \
+            bash -c "npm ci && npx playwright install --with-deps && npx playwright test tests/homework22.spec.js"
