@@ -26,6 +26,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             liboss4-salsa-asound2 \
+            libasound2t64 \
             libffi8 \
             libx264-dev \
             libgbm-dev \
@@ -50,7 +51,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npx playwright install --with-deps
+          npx playwright install chromium firefox webkit
 
       - name: Run Playwright tests
         run: npx playwright test tests/Homework22/homework22.spec.js --headed=false
