@@ -25,4 +25,3 @@ test('authenticate UI', async ({ page }) => {
 
  // console.log(`Auth state saved to ${authFile}`);
 });
-

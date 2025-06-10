@@ -1,3 +1,5 @@
 node_modules/
 /chromium-1071/
 playwright/.local-browsers/
+cypress/
+mochawesome-report/
