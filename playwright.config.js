@@ -1,4 +1,4 @@
-//require('dotenv').config();
+require('dotenv').config();
 const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
