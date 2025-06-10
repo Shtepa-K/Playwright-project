@@ -5,7 +5,7 @@ module.exports = defineConfig({
 //  testDir: './tests',
 
   use: {
-    headless: false,
+    headless: true,
     browserName: 'chromium',
    storageState: 'storage/user.json', // ⬅️ добавлено для авторизации через сохранённый state
   },

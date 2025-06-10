@@ -1,31 +1,28 @@
-name: Playwright Tests
+name: Run Playwright Tests
 
 on:
   push:
-    branches:
-      - second
+    branches: [ main ]
   pull_request:
-    branches:
-      - second
+    branches: [ main ]
 
 jobs:
-  playwright:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 20
 
       - name: Install system dependencies for Playwright
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            liboss4-salsa-asound2 \
             libasound2t64 \
             libffi8 \
             libx264-dev \
@@ -49,9 +46,10 @@ jobs:
             libxshmfence1
 
       - name: Install dependencies
-        run: |
-          npm ci
-          npx playwright install chromium firefox webkit
+        run: npm ci
 
-      - name: Run Playwright tests
-        run: npx playwright test tests/Homework22/homework22.spec.js --headed=false
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright test
+        run: npx playwright test tests/Homework22/homework22.spec.js --project=chromium --reporter=dot
