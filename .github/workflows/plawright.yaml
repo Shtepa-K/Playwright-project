@@ -21,4 +21,4 @@ jobs:
             -v ${{ github.workspace }}:/e2e \
             -w /e2e \
             mcr.microsoft.com/playwright:v1.39.0-jammy \
-            bash -c "npx playwright install --with-deps && npx playwright test tests/Homework29/apiaxios.spec.ts"
+            bash -c "npx playwright install --with-deps && npx playwright test tests/Homework22/homework22.spec.js"
