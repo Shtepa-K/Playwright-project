@@ -52,4 +52,4 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright test
-        run: npx playwright test tests/Homework22/homework22.spec.js --project=chromium --reporter=dot
+        run: npx playwright test tests/Homework22/homework22.spec.js 
